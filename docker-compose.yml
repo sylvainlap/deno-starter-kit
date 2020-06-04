@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  deno-starter-kit:
+    container_name: deno-starter-kit_container
+    image: deno-starter-kit
+    build: .
+    environment:
+      - PORT=2337
+    ports:
+      - 2337:2337
+      - 9229:9229
+    volumes:
+      - .:/var/www
+    command: /bin/bash
+    stdin_open: true
+    tty: true
